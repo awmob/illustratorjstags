@@ -1,0 +1,31 @@
+td{
+	vertical-align: middle;
+	color: #666;
+	padding:5px;
+}
+
+
+tr:nth-child(even) {background: #aaa}
+tr:nth-child(odd) {background: #ddd}
+
+
+
+select{
+	width: 150px;
+}
+
+textarea{
+	font-size: 15px;
+}
+
+#subme{
+	width: 250px;
+	height: 60px;
+	background-color: green;
+	color: white;
+	font-size: 18px;
+}
+
+#subme:hover{
+	cursor: pointer;
+}
