@@ -2,6 +2,7 @@
 	
 
 	const tab = "	";
+	const delim = "||";
 	const nl = "\r\n";
 	const sfx = ".ai";
 	const jsfx = ".js";
@@ -12,6 +13,7 @@
 
 	const tags_dir = root_dir . "ai/";
 	const icons_dir = root_dir . "icons/";
+	
 	
 
 	$icons[0] = "paw";
@@ -88,7 +90,13 @@
 
 
 	//specific_values
-	
+	$spec_vals['BONE_XL']['symb_x'] = 108;
+	$spec_vals['BONE_XL']['symb_y'] = -18;
+	$spec_vals['BONE_XL']['text_x'] = 20;
+	$spec_vals['BONE_XL']['text_y'] = -30;
+	$spec_vals['BONE_XL']['text_width'] = 98;
+	$spec_vals['BONE_XL']['paw_symbol_width'] = 16;
+	$spec_vals['BONE_XL']['bone_symbol_width'] = 22;	
 	
 	$spec_vals['BONE_L']['symb_x'] = 86;
 	$spec_vals['BONE_L']['symb_y'] = -14;
@@ -115,4 +123,62 @@
 	$spec_vals['PAW_L']['paw_symbol_width'] = 14;
 	$spec_vals['PAW_L']['bone_symbol_width'] = 24;
 
-	
+	$spec_vals['PAW_M']['symb_x'] = 29;
+	$spec_vals['PAW_M']['symb_y'] = false;
+	$spec_vals['PAW_M']['text_x'] = 12;
+	$spec_vals['PAW_M']['text_y'] = -20;
+	$spec_vals['PAW_M']['text_width'] = 50;
+	$spec_vals['PAW_M']['paw_symbol_width'] = 13;
+	$spec_vals['PAW_M']['bone_symbol_width'] = 23;
+
+
+	$spec_vals['CAT_M']['symb_x'] = 29;
+	$spec_vals['CAT_M']['symb_y'] = false;
+	$spec_vals['CAT_M']['text_x'] = 11;
+	$spec_vals['CAT_M']['text_y'] = -14;
+	$spec_vals['CAT_M']['text_width'] = 39;
+	$spec_vals['CAT_M']['paw_symbol_width'] = 11;
+	$spec_vals['CAT_M']['bone_symbol_width'] = 21;
+
+	$spec_vals['CIRCLE_L']['symb_x'] = 36;
+	$spec_vals['CIRCLE_L']['symb_y'] = false;
+	$spec_vals['CIRCLE_L']['text_x'] = 14;
+	$spec_vals['CIRCLE_L']['text_y'] = -31;
+	$spec_vals['CIRCLE_L']['text_width'] = 60;
+	$spec_vals['CIRCLE_L']['paw_symbol_width'] = 14;
+	$spec_vals['CIRCLE_L']['bone_symbol_width'] = 24;
+
+
+	$spec_vals['HEART_L']['symb_x'] = 40;
+	$spec_vals['HEART_L']['symb_y'] = false;
+	$spec_vals['HEART_L']['text_x'] = 12;
+	$spec_vals['HEART_L']['text_y'] = -21;
+	$spec_vals['HEART_L']['text_width'] = 65;
+	$spec_vals['HEART_L']['paw_symbol_width'] = 14;
+	$spec_vals['HEART_L']['bone_symbol_width'] = 24;
+
+
+	$spec_vals['HEART_S']['symb_x'] = 40;
+	$spec_vals['HEART_S']['symb_y'] = false;
+	$spec_vals['HEART_S']['text_x'] = 9;
+	$spec_vals['HEART_S']['text_y'] = -14;
+	$spec_vals['HEART_S']['text_width'] = 38;
+	$spec_vals['HEART_S']['paw_symbol_width'] = 11;
+	$spec_vals['HEART_S']['bone_symbol_width'] = 19;
+
+
+	$spec_vals['SLIDER_L']['symb_x'] = 68;
+	$spec_vals['SLIDER_L']['symb_y'] = false;
+	$spec_vals['SLIDER_L']['text_x'] = 29;
+	$spec_vals['SLIDER_L']['text_y'] = -5;
+	$spec_vals['SLIDER_L']['text_width'] = 82;
+	$spec_vals['SLIDER_L']['paw_symbol_width'] = 14;
+	$spec_vals['SLIDER_L']['bone_symbol_width'] = 24;
+
+	$spec_vals['SLIDER_M']['symb_x'] = 56;
+	$spec_vals['SLIDER_M']['symb_y'] = false;
+	$spec_vals['SLIDER_M']['text_x'] = 22;
+	$spec_vals['SLIDER_M']['text_y'] = -5;
+	$spec_vals['SLIDER_M']['text_width'] = 74;
+	$spec_vals['SLIDER_M']['paw_symbol_width'] = 12;
+	$spec_vals['SLIDER_M']['bone_symbol_width'] = 22;

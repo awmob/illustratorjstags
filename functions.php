@@ -2,7 +2,7 @@
 
 
 	function parse_lines($file_contents){
-		$lines = explode(nl,$file_contents);
+		$lines = explode(delim,$file_contents);
 		return $lines;
 	}
 
@@ -72,10 +72,15 @@
 		}
 	}
 
-	function save_js($filename, $user_folder, $data){
-		$filename = str_replace(sfx, jsfx, $filename);
+	function user_file($filename, $user_folder){
 		$save_file = $user_folder . "/" . $filename;
-		$fh = fopen($save_file,'w');
+		
+		return $save_file;
+	}
+
+	function save_js($filename, $data){
+		$filename = str_replace(sfx, jsfx, $filename);
+		$fh = fopen($filename,'w');
 		fwrite($fh, $data);
 		fclose($fh);
 	}

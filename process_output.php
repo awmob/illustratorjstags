@@ -29,6 +29,8 @@
 					// vars - username,  filename,  tag_type,  icon, font_name, linea thru d
 
 					for($i=0;$i<sizeof($_POST['username']);$i++){
+
+						$main_file_name = $_POST['filename'][$i] . sfx;
 						
 
 						$user_strip = str_replace("*","",$_POST['username'][$i]);
@@ -38,13 +40,16 @@
 
 						
 						$lines = condense_lines($_POST['linea'][$i], $_POST['lineb'][$i], $_POST['linec'][$i], $_POST['lined'][$i]);
+
+						//make filename
+						$final_file = user_file($main_file_name, $user_folder);
 						
-						
+
 						//call the js makers
-						$js_data = common_js_maker($_POST['icon'][$i], $_POST['font_name'][$i], $lines, $_POST['tag_type'][$i], $_POST['filename'][$i],$spec_vals, $user_folder);
+						$js_data = common_js_maker($_POST['icon'][$i], $_POST['font_name'][$i], $lines, $_POST['tag_type'][$i], $final_file, $spec_vals, $user_folder, $main_file_name);
 
 						//save the js
-						save_js($_POST['filename'][$i], $user_folder, $js_data);
+						save_js($final_file, $js_data);
 
 
 					}

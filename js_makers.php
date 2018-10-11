@@ -1,7 +1,7 @@
 <?php
 
 
-	function common_js_maker($icon, $font, $lines, $tag_type, $ai_file_name_save, $spec_vals, $user_folder){
+	function common_js_maker($icon, $font, $lines, $tag_type, $ai_file_name_save, $spec_vals, $user_folder, $raw_file){
 
 		$js = "///////INITIALIZE ///////////" . nl . nl;
 
@@ -66,6 +66,8 @@
 				$js .= "newDoc.activate();"  . nl;
 				$js .= "app.paste();"  . nl;
 
+				$js .= "symbolDoc.close(SaveOptions.DONOTSAVECHANGES);"  . nl;
+
 				$js .= "newDoc.pageItems[0].left = 0;"  . nl;
 				
 				$js .= "var height = height_ratio_get(newDoc.pageItems[0], symb_width);"  . nl;
@@ -102,6 +104,8 @@
 			$js .= "newDoc.activate();"  . nl;
 			$js .= "app.paste();"  . nl;
 
+			$js .= "symbolDoc.close(SaveOptions.DONOTSAVECHANGES);"  . nl;
+
 			$js .= "newDoc.pageItems[0].left = 0;"  . nl;
 
 			$js .= "var symb_width = ".$symb_width.";"  . nl;
@@ -118,6 +122,12 @@
 		}
 
 		$js .= "///////END CORNER ICON ///////////" . nl . nl;
+
+//root_dir
+
+		//save file
+		$js .= "var filenamesave = new File('".root_dir.$ai_file_name_save."');"  . nl;
+		$js .= "newDoc.saveAs(filenamesave);" . nl . nl;
 		
 		//constrained height function
 		$js .= "function height_ratio_get(item, new_width){"  . nl;
