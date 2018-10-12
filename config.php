@@ -86,8 +86,10 @@
 	$font_names[30] ="TimesNewRomanPSMT";
 	$font_names[31] ="KozMinPr6N-Regular";
 	$font_names[32] ="WaltographUI-Bold";
+	$font_names[33] ="Pristina-Regular";
 
-	sort($font_names);
+	$font_names_show = $font_names;
+	sort($font_names_show);
 
 
 

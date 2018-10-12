@@ -1,7 +1,7 @@
 <?php
 
 
-	function common_js_maker($icon, $font, $lines, $tag_type, $ai_file_name_save, $spec_vals, $user_folder, $raw_file){
+	function common_js_maker($icon, $font, $lines, $tag_type, $ai_file_name_save, $spec_vals, $user_folder, $raw_file, $offsets){
 
 		$js = "///////INITIALIZE ///////////" . nl . nl;
 
@@ -11,8 +11,12 @@
 
 		//TEXT - if the sym x is false then goes after first line, otherwise goes in corner
 		
-		$js .= "var y_track = " . $spec_vals[$tag_type]['text_y'] . ";";
-		$js .= "var x = " . $spec_vals[$tag_type]['text_x'] . ";";
+		
+		$js .= "var y_track = " . ($spec_vals[$tag_type]['text_y'] + $offsets['ytop']) . ";" . nl;
+
+
+
+		$js .= "var x = " . ($spec_vals[$tag_type]['text_x'] - $offsets['xleft']). ";" . nl;
 
 		$js .= "var font_name = '".$font."';"  . nl;
 
@@ -47,7 +51,7 @@
 			$js .= "textRef".$i.".height = txt_height;"  . nl;
 
 
-			$js .= "y_track -= (txt_height - 2);"  . nl;
+			$js .= "y_track -= (txt_height - ". $offsets['ybtm'].");"  . nl;
 
 			//add symbol only on second iteration and only if not a bone ie. if symbol y is false
 			if(!$spec_vals[$tag_type]['symb_y'] && $i == 0 && $icon != not_set){
@@ -83,7 +87,7 @@
 
 				$js .= "newDoc.pageItems[0].selected = false;"  . nl;
 
-				$js .= "y_track -= (height + 1);"  . nl;
+				$js .= "y_track -= (height - ".$offsets['ybtm'].");"  . nl;
 
 				$js .= "///////END INLINE ICON ///////////" . nl . nl;
 

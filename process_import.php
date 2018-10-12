@@ -65,7 +65,7 @@
 									echo "<br>";
 
 									echo "<select name='font_name[]'>";
-									echo set_dropdowns($font_names);
+									echo set_dropdowns($font_names_show);
 									echo "</select>";
 
 									

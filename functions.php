@@ -90,6 +90,40 @@
 		fclose($fh);
 	}
 
+	
+	//position offsets for different fonts due to do varying leading spaces
+	function offsets($cur_font, $fonts){
+		
+		$offsets['ytop'] = 2;
+		$offsets['ybtm'] = 2;
+		$offsets['xleft'] = 0;
+
+		switch ($cur_font){
+
+			//calibri and calibri bold
+			case $fonts[3]:
+			case $fonts[4]:
+				$offsets['ytop'] = 1;
+				$offsets['ybtm'] = 3;
+				$offsets['xleft'] = -1;
+			break;
+
+			//monotype corsiva
+			case $fonts[14]:
+				$offsets['ytop'] = 3;
+				$offsets['ybtm'] = 3;
+				$offsets['xleft'] = 0.6;
+			break;
+
+			
+
+		}
+
+		return $offsets;
+
+
+	}
+
 
 
 	

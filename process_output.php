@@ -43,10 +43,12 @@
 
 						//make filename
 						$final_file = user_file($main_file_name, $user_folder);
+
+						$offsets = offsets($_POST['font_name'][$i], $font_names);
 						
 
 						//call the js makers
-						$js_data = common_js_maker($_POST['icon'][$i], $_POST['font_name'][$i], $lines, $_POST['tag_type'][$i], $final_file, $spec_vals, $user_folder, $main_file_name);
+						$js_data = common_js_maker($_POST['icon'][$i], $_POST['font_name'][$i], $lines, $_POST['tag_type'][$i], $final_file, $spec_vals, $user_folder, $main_file_name, $offsets);
 
 						//save the js
 						save_js($final_file, $js_data);
