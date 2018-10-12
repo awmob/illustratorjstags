@@ -9,6 +9,8 @@
 	const main_dir = "orders/";
 	const not_set = "0_NONE_0";
 
+	const def = "MonotypeCorsiva";
+
 	const root_dir = "/c/wamp64/www/tag_creator/";
 
 	const tags_dir = root_dir . "ai/";

@@ -30,7 +30,12 @@
 	function set_dropdowns($arr){
 		$options = "";
 		foreach($arr as $ar){
-			$options .= "<option value='".$ar."'>".$ar."</option>";
+			if ($ar == def){
+				$options .= "<option selected value='".$ar."'>".$ar."</option>";
+			}
+			else{
+				$options .= "<option value='".$ar."'>".$ar."</option>";
+			}
 		}
 		return $options;
 	}
