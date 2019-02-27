@@ -32,10 +32,50 @@
 					echo "<form method = 'POST' action='process_output.php'>";
 
 						echo "<table>";
+						
+						//process for different lines
+						$previousValue = false;
+						$prev_css = "background-color: #DDD;";
+						$cur_css = "background-color: #DDD;";
 
 						foreach($lines as $ln){
 
-							echo "<tr>";
+							$line_arr = process_lines($ln);
+							
+							//change bg color for diff usernames
+							if($previousValue){
+								
+								$prev_arr = process_lines($previousValue);
+								//same usernames
+								if($line_arr['username'] == $prev_arr['username']){
+									$cur_css = $prev_css;
+									
+								}
+								//different usernames different colours to previous
+								else{
+									
+									if($prev_css == "background-color: #DDD;"){
+										$cur_css = "background-color: #71D2EB;";
+										
+									}
+									else{
+										
+										$cur_css = "background-color: #DDD;";
+									}
+								}
+
+							}
+							//first value
+							else{
+								$cur_css = "background-color: #71D2EB;";
+								
+							}
+
+							$previousValue = $ln;
+							$prev_css = $cur_css;
+							
+
+							echo "<tr style='".$cur_css."'>";
 
 								$line_arr = process_lines($ln);
 
@@ -75,7 +115,7 @@
 
 								echo "<td>";
 
-									echo "<textarea cols='20' rows='5'>".$line_arr['notes']."</textarea>";
+									echo "<textarea cols='30' rows='5'>".clean_commas($line_arr['notes'])."</textarea>";
 
 
 								echo "</td>";
@@ -84,13 +124,13 @@
 
 									echo "Lines 1 to 4:<br>";
 									
-									echo "<input type='text' name='linea[]' value='".$line_arr['linea']."' size='12'>";
+									echo "<input type='text' name='linea[]' value='".clean_commas($line_arr['linea'])."' size='12'>";
 
-									echo " <input type='text' name='lineb[]' value='".$line_arr['lineb']."' size='12'>";
+									echo " <input type='text' name='lineb[]' value='".clean_commas($line_arr['lineb'])."' size='12'>";
 
-									echo " <input type='text' name='linec[]' value='".$line_arr['linec']."' size='12'>";
+									echo " <input type='text' name='linec[]' value='".clean_commas($line_arr['linec'])."' size='12'>";
 
-									echo " <input type='text' name='lined[]' value='".$line_arr['lined']."' size='12'>";
+									echo " <input type='text' name='lined[]' value='".clean_commas($line_arr['lined'])."' size='12'>";
 
 
 								echo "</td>";

@@ -64,7 +64,7 @@
 
 
 	function folder_now(){
-		$name = date('Y_m_m_his');
+		$name = date('Y_m_d_his');
 		$dir_name = main_dir . $name;
 		mkdir(main_dir . $name);
 		return $dir_name;
@@ -124,6 +124,10 @@
 
 	}
 
+	function clean_commas($line){
+		$line = str_replace("'","`",$line);
+		return $line;
+	}
 
 
 	

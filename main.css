@@ -4,12 +4,6 @@ td{
 	padding:5px;
 }
 
-
-tr:nth-child(even) {background: #aaa}
-tr:nth-child(odd) {background: #ddd}
-
-
-
 select{
 	width: 150px;
 }
